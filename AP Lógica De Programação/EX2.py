@@ -10,8 +10,8 @@ print(95 * '-')
 '''Primeiramente inicio indicando a tabela de escolha dos items para o usuário, depois dessa apresentação desso e armazeno
 cada valor referente a tamanho e código do produto em uma lista.'''
 P = ['6.00','7.00','8.00']
-M = ['10.00','12.00','18.00']
-G = ['8.00','14.00','24.00']
+M = ['8.00','12.00','18.00']
+G = ['10.00','14.00','24.00']
 a = 0
 '''Utilizo a variável 'a' para armazenar o valor de cada operação solicitada.'''
 while True:

@@ -3,6 +3,7 @@ class Produto:
     def __init__(self,valor,quantidade):
         self.valor = valor
         self.quantidade = quantidade
+        self.testa_valores_de_entrada()
     
     def testa_valores_de_entrada(self):
         while True: 
@@ -10,6 +11,7 @@ class Produto:
                 self.valor = float(self.valor)
                 self.quantidade = int(self.quantidade)
                 break
+            
             except ValueError:
                 print("\nDigite um valor e quantidade válidos.".upper())
                 self.valor = input("\nDigite o valor do produto novamente: ")
@@ -47,7 +49,6 @@ if __name__ == '__main__':
     quantidade = input('Digite a quantidade do produto: ')
 
     produto = Produto(valor,quantidade)
-    produto.testa_valores_de_entrada()
 
     print('\nValor sem frete é de R${:.2f}'.format(produto.valor_sem_frete()))
     print('Valor com frete é de R${:.2f}'.format(produto.valor_com_frete()))
