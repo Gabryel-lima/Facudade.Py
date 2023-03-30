@@ -16,7 +16,7 @@ class Sorvetes:
         self.exibe_o_tipo_e_tamanho()
 
     def exibe_o_tipo_e_tamanho(self):
-        print('Você solicitou um sorvete de {}'.format(self.tipos[self.tipo]))
+        print('Você solicitou um sorvete de {}'.format(self.tipo[self.tipos]))
         print('Tamanho {} de 500ml selecionado!'.format(self.tamanho[self.tamanhos]))
 
     def valida_tipo(self):
@@ -29,7 +29,7 @@ class Sorvetes:
                 self.tipo = input('\nDigite o tipo do pote: ')
             
             if self.tipo in self.tipos:
-                self.exibe_o_tipo_e_tamanho()
+                self.exibe_o_tipo_e_tamanho
                 break
             else:
                 ValueError("Insira o tipo correspondente!!".upper())
