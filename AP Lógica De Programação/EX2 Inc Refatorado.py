@@ -1,12 +1,7 @@
 class Sorvetes:
 
     tipos = {1: 'tipo tradicional', 2: 'tipo especial', 3: 'tipo premium'}
-    tamanhos = {'P': "pequeno", 'M': "medio", 'G': "grande"}
-    precos = {
-        1: {'P': 6.00, 'M': 10.00, 'G': 18.00},
-        2: {'P': 7.00, 'M': 12.00, 'G': 21.00},
-        3: {'P': 8.00, 'M': 14.00, 'G': 24.00}
-    }
+    tamanhos = { 1: {'P': 6.00, 'M': 10.00, 'G': 18.00}, 2: {'P': 7.00, 'M': 12.00, 'G': 21.00}, 3: {'P': 8.00, 'M': 14.00, 'G': 24.00}}
 
     def __init__(self,tipo,tamanho):
         self.tipo = tipo
@@ -28,9 +23,11 @@ class Sorvetes:
                 print("\nDigite um tipo válido!!".upper())
                 self.tipo = input('\nDigite o tipo do pote: ')
             
-            if self.tipo in self.tipos:
-                self.exibe_o_tipo_e_tamanho
-                break
+            if self.tipo == 1:
+                for self.tipo in self.tipos:
+                    for key,value in self.tipos.items():
+                        self.exibe_o_tipo_e_tamanho = self.tipo
+                        break
             else:
                 ValueError("Insira o tipo correspondente!!".upper())
             
@@ -44,7 +41,8 @@ class Sorvetes:
                 print("\nDigite um tamanho válido!!".upper())
                 self.tamanho = input('\nDigite o tamanho do pote: ')
             
-            if self.tamanho in self.tamanhos:
+            for self.tamanho in self.tamanhos:
+                self.exibe_o_tipo_e_tamanho
                 break
             else:
                 ValueError("Insira o tamanho correspondente!!".upper())
