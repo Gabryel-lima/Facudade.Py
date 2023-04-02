@@ -1,74 +1,80 @@
 class Sorvetes:
 
+    tipos = {
+        1: 'tipo tradicional',
+        2: 'tipo especial', 
+        3: 'tipo premium'
+    }
+    tamanhos = {
+        'P': 'pequeno de 500ml',
+        'M': 'medio de 1L',
+        'G': 'grande de 2L'
+    }
+    tabelaValores = {
+        'P':{1: 6.00, 2: 7.00, 3: 8.00},
+        'M':{1: 10.00, 2: 12.00, 3: 14.00},
+        'G':{1: 18.00, 2: 21.00, 3: 24.00}
+    }
+
     def __init__(self):
-        self.count = 0
         self.valida_tipo()
         self.valida_tamanho()
-        self.exibe_o_tipo_e_tamanho()
-    
-    def exibe_o_tipo_e_tamanho(self):
-        print('Você solicitou um sorvete de {}'.format(self.tipos.get(True)))
-        print('Tamanho {} de 500ml selecionado!'.format(self.tamanhos.items()))
+        self.verifica_valor()
+        self.exibe_o_tipo_e_tamanho_e_valor()
 
-    def valida_tipo(self): 
-        tipos = {1: 'tipo tradicional',
-                 2: 'tipo especial', 
-                 3: 'tipo premium'}
-        
+    def valida_tipo(self):
         while True:
             try:
-                tipo = int(input('Digite o tipo do pote: '))
-                self.tipo = tipo
-                self.tipos = tipos
+                if tipo == 1:
+                    self.tipo = self.tipos[1]
+                    return 
+                
+                elif tipo == 2:
+                    self.tipo = self.tipos[2]
+                    return
 
-                if self.tipo == 1:
-                    for value in tipos.values():
-                        return self.exibe_o_tipo_e_tamanho
-                            
-                elif self.tipo == 2:
-                    for value in tipos.values():
-                        return self.exibe_o_tipo_e_tamanho
+                elif tipo == 3:
+                    self.tipo = self.tipos[3]
+                    return 
 
-                elif self.tipo == 3:
-                    for value in tipos.values():
-                        return self.exibe_o_tipo_e_tamanho
-
+                else:
+                    print("\nDigite um tipo válido!!\n".upper())
+                
             except ValueError:   
                 print("\nDigite um tipo válido!!\n".upper())
-                
 
-    def valida_tamanho(self):
-        tamanhos = {'P': 6.00, 'M': 10.00, 'G': 18.00,
-                    'P': 7.00, 'M': 12.00, 'G': 21.00, 
-                    'P': 8.00, 'M': 14.00, 'G': 24.00}
-
+    def valida_tamanho(self):   
         while True:
             try:
-                tamanho = str(input('Digite o tamanho do sorvete: '.isupper()))
-                self.tamanho = tamanho
-                self.tamanhos = tamanhos
+                if tamanho == 'P':
+                    self.tamanho = self.tamanhos[tamanho]                
+                    return
+                        
+                elif tamanho == 'M':
+                    self.tamanho = self.tamanhos[tamanho]
+                    return
 
-                if self.tamanho == 'P':
-                    for key,value in tamanhos.fromkeys(key,value):
-                        return self.exibe_o_tipo_e_tamanho
+                elif tamanho == 'G':
+                    self.tamanho = self.tamanhos[tamanho]
+                    return
                 
-                elif self.tamanho == 'M':
-                    for key,value in tamanhos.fromkeys(key,value):
-                        return self.exibe_o_tipo_e_tamanho
+                else: 
+                    print("\nDigite um tamanho válido!!\n".upper())
 
-                elif self.tamanho == 'G':
-                    for key,value in tamanhos.fromkeys(key,value):
-                        return self.exibe_o_tipo_e_tamanho
-    
             except ValueError:
-                print("\nDigite um tamanho válido!!".upper())
-                
-        
-            
+                print("\nDigite um tamanho válido!!\n".upper())
+
+    def verifica_valor(self):
+        self.valor = self.tabelaValores[tamanho][tipo]
+    
+    def exibe_o_tipo_e_tamanho_e_valor(self):
+        print('\nVocê solicitou um sorvete de {}'.format(self.tipo))
+        print('Tamanho {} selecionado!'.format(self.tamanho))
+        print('Valor total R$ {} \n'.format(self.valor))
+    
 if __name__ == '__main__':
     
-    print('\nBem-vindo a loja')
-    print('\nEscolha o tamanho de pote desejado ==> (P/M/G)\n')
+    print('\nBem-vindo a loja!')
     print( 35 * '_' + 'Tabela de preços'.upper() + 44 * '_')
     print(95 * '-')
     print( '|' + ' '  'Tipos'  + ' ' '|' + '      ' 'Descrição' + '       ' '|' + ' ' 'Tamanho P (500ml)' + ' ' '|' + ' ' 'Tamanho M (1000ml)' + ' ' '|' + ' ' 'Tamanho G (2000ml)' + ' ' '|')
@@ -76,5 +82,9 @@ if __name__ == '__main__':
     print( '|' + '   '  '2' + '   ' '|' + ' ' 'Sabores Especiais' + '    ' '|' + '      ' 'R$ 7,00' + '      ' '|' + '      ' 'R$ 12,00' + '      ' '|' + '      ' 'R$ 21,00' + '      ' '|')
     print( '|' + '   '  '3' + '   ' '|' + ' ' 'Sabores Premium' + '      ' '|' + '      ' 'R$ 8,00' + '      ' '|' + '      ' 'R$ 14,00' + '      ' '|' + '      ' 'R$ 24,00' + '      ' '|')
     print(95 * '-')
+    print('Escolha o tamanho de pote desejado ==> (P/M/G)\n')
 
-    sorvetes = Sorvetes()
+    tipo = int(input('Digite o tipo do pote: '))
+    tamanho = str(input('Digite o tamanho do sorvete: ')).upper()
+    
+    sorvetes = Sorvetes() 
