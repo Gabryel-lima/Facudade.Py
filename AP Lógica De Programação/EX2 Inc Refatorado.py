@@ -16,9 +16,7 @@ class Sorvetes:
         'G':{1: 18.00, 2: 21.00, 3: 24.00}
     }
 
-    def __init__(self,tipo,tamanho):
-        self.tipo = tipo
-        self.tamanho = tamanho
+    def __init__(self):
         self.valida_tipo()
         self.valida_tamanho()
         self.verifica_valor()
@@ -89,4 +87,4 @@ if __name__ == '__main__':
     tipo = int(input('Digite o tipo do pote: '))
     tamanho = str(input('Digite o tamanho do sorvete: ')).upper()
     
-    sorvetes = Sorvetes(tipo,tamanho)
+    sorvetes = Sorvetes()
