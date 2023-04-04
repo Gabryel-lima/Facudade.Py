@@ -7,8 +7,8 @@ class Sorvetes:
     }
     tamanhos = {
         'P': 'pequeno de 500ml',
-        'M': 'medio de 1L',
-        'G': 'grande de 2L'
+        'M': 'medio de 1000ml',
+        'G': 'grande de 2000ml'
     }
     tabelaValores = {
         'P':{1: 6.00, 2: 7.00, 3: 8.00},

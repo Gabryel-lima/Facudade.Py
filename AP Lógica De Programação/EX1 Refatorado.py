@@ -1,24 +1,21 @@
 class Produto:
 
-    def __init__(self,valor,quantidade):
-        self.valor = valor
-        self.quantidade = quantidade
+    def __init__(self):
         self.testa_valores_de_entrada()
     
     def testa_valores_de_entrada(self):
         while True: 
             try:
-                self.valor = float(self.valor)
-                self.quantidade = int(self.quantidade)
+                valor = input('\nDigite o valor do Produto: ')
+                self.valor = float(valor)
+                
+                quantidade = input('Digite a quantidade do produto: ')
+                self.quantidade = int(quantidade)
                 break
             
             except ValueError:
                 print("\nDigite um valor e quantidade válidos.".upper())
-                self.valor = input("\nDigite o valor do produto novamente: ")
-                self.quantidade = input("Digite a quantidade do produto novamente: ")
-
-    def valor_sem_frete(self):
-        return self.valor * self.quantidade
+    
     
     def valor_com_frete(self):
         valor_sem_frete = self.valor_sem_frete()   
@@ -40,17 +37,19 @@ class Produto:
         
         return valor_com_frete
 
+    @property
+    def valor_sem_frete(self):
+        return self.valor * self.quantidade
+    
 if __name__ == '__main__':
 
     print('\nBem-vindo a loja de produtos!')
     print(29 * '*')
-    
-    valor = input('\nDigite o valor do Produto: ')
-    quantidade = input('Digite a quantidade do produto: ')
 
-    produto = Produto(valor,quantidade)
+    produto = Produto()
 
     print('\nValor sem frete é de R${:.2f}'.format(produto.valor_sem_frete()))
     print('Valor com frete é de R${:.2f}'.format(produto.valor_com_frete()))
     print('')
     print(29 * '*')
+    print('\n')
