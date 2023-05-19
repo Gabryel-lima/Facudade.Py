@@ -10,12 +10,12 @@ a R$ 11.200,00 por més
 Escreva a funcao receita e a funcao custo
 Determine também o ponto de equilibrio'''
 
-""" x,r,c = symbols('x r c')
+x,r,c = symbols('x r c')
 r=186*x
 c=109*x+11200.0
 p=solve(Eq(r,c),x)
 print(p)
-print(r.subs(x,p[0])) """
+print(r.subs(x,p[0]))
 
 ##################################################
 
@@ -23,3 +23,6 @@ print(r.subs(x,p[0])) """
 
 coeff = [-1,-5,9,11]
 print(np.roots(coeff))
+
+
+

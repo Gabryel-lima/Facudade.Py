@@ -21,3 +21,5 @@ DiametroMaximo = Diametro + b
 
 print('Diâmetro minimo: %.2f' % DiametroMinimo)
 print('Diâmetro maximo: %.2f' % DiametroMaximo)
+
+

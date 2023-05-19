@@ -6,8 +6,8 @@ from sympy import *
 '''É possível realizar operações relacionadas a matrizes e vetores de uma
 forma bastante simples por meio do Python.'''
 
-""" A=np.array([[113,2,-1],[5,0,20]])
-print(A) """
+A=np.array([[113,2,-1],[5,0,20]])
+print(A) 
 
 ############################################################
 
@@ -17,9 +17,9 @@ v=(35,00; 16,40; 8,49; 15,56)
 E, além disso, que cada dólar corresponde a 4 reais. Obtenha um vetor
 w que armazena os preços em reais dessas mercadorias.'''
 
-""" v=np.array([[35.00,16.40,8.49,15.56]])
+v=np.array([[35.00,16.40,8.49,15.56]])
 w=4*v
-print(w) """
+print(w) 
 
 ###########################################################
 
@@ -33,10 +33,10 @@ Sabendo-se que a margem de contribuição corresponde ao preço de
 venda menos o preço de custo, obtenha o vetor m que contém as respectivas
 margens de contribuição, em dólares, dessas mercadorias.'''
 
-""" v=np.array([[35.00,16.40,8.49,15.56]])
+v=np.array([[35.00,16.40,8.49,15.56]])
 u=np.array([[17.80,10.20,5.60,9.99]])
 m=v-u
-print(m) """
+print(m) 
 
 ###########################################################
 
@@ -54,10 +54,10 @@ multiplicações de cada nota pelos respectivos pesos e que essa média,
 matematicamente, é fornecida pelo produto escalar dos vetores “notas” e
 “pesos”, determine a referida média.'''
 
-""" notas=np.array([[80,95,100,70]])
+notas=np.array([[80,95,100,70]])
 pesos=np.array([[0.2,0.2,0.3,0.3]])
 media=np.inner(notas,pesos)
-print(media) """
+print(media) 
 
 ##############################################################
 
@@ -65,10 +65,10 @@ print(media) """
 ortogonal aos vetores u e v, ou seja, um vetor w que forma um ângulo de 90°
 com o vetor u e um ângulo de 90° com o vetor v.'''
 
-"""u=np.array([[2,2,-2]])
+u=np.array([[2,2,-2]])
 v=np.array([[1,5,1]])
 w=np.cross(u,v)
-print(w)"""
+print(w)
 
 ###############################################################
 
@@ -91,10 +91,10 @@ o total de distintivos de cada cor usados em cada um dos meses de maio e junho.
 '''
 #Existem duas matrizes agora
 
-""" distintivos=np.array([[3,1,3],[6,5,5]])
+distintivos=np.array([[3,1,3],[6,5,5]])
 camisetas=np.array([[100,50],[50,100],[50,50]])
 TotalDeDistintivos=np.matmul(distintivos,camisetas)
-print(TotalDeDistintivos) """
+print(TotalDeDistintivos) 
 
 ##############################################################
 
@@ -105,10 +105,10 @@ refrigerante e pagou R$ 22,00. Leandro consumiu dois sanduíches e um
 refrigerante, totalizando R$ 34,00. Com base nessas informações, determine o
 preço de cada sanduíche e o preço de cada refrigerante'''
 
-""" A=np.array([[1,1],[2,1]])
+A=np.array([[1,1],[2,1]])
 b=np.array([[22],[34]])
 x=np.linalg.solve(A,b)
-print(x) """
+print(x) 
 
 ################################################################
 
@@ -118,10 +118,10 @@ corresponde a 1.900 m2. A produção total de tapetes precisa ser de 550
 unidades. Quantas unidades de cada modelo devem ser produzidas para que
 toda a matéria-prima seja utilizada e a produção total seja atendida?'''
 
-""" A=np.array([[3,4],[1,1]])
+A=np.array([[3,4],[1,1]])
 b=np.array([[1900],[550]])
 x=np.linalg.solve(A,b)
-print(x) """
+print(x) 
 
 ##############################################################
 
@@ -130,10 +130,10 @@ print(x) """
 x-y+42=19
 -4x+y+z=0
 '''
-""" A=np.array([[3,4,-2],[1,-1,4],[-4,1,1]])
+A=np.array([[3,4,-2],[1,-1,4],[-4,1,1]])
 b=np.array([[8],[19],[0]])
 X=np.linalg.solve(A,b)
-print(X) """
+print(X) 
 
 #############################################################
 
@@ -143,8 +143,8 @@ print(X) """
 inclinação, vamos utilizar o arco tangente e, no final, converter a solução para
 grau.'''
 
-""" inclinacao=np.arctan(40/150)
-print(np.rad2deg(inclinacao)) """
+inclinacao=np.arctan(40/150)
+print(np.rad2deg(inclinacao)) 
 
 ############################################################
 
@@ -155,8 +155,8 @@ complexo “z=a+bi” é escrito como “complex(a,b)”. O número complexo “
 corresponde a “z=complex(2, 4)”.
 '''
 
-""" z=complex(2,4)
-print(z) """
+z=complex(2,4)
+print(z) 
 
 '''O módulo de um número complexo é dado por “abs()”. Para obtermos o
 módulo de “z=2+4j”, podemos escrever “abs(z)”, em que “z=complex(2, 4)”'''
@@ -167,8 +167,8 @@ função é “angle()”. Para obtermos o ângulo de “z=2+4j”, dado por “
 4)”, basta fazermos “np.angle(z,deg=True)”. O parâmetro “deg=True” é utilizado
 quando queremos o ângulo em graus.'''
 
-""" z=complex(2,4)
-print(np.angle(z,deg=True)) """
+z=complex(2,4)
+print(np.angle(z,deg=True)) 
 
 '''Para obtermos o ângulo em radianos, vamos escrever apenas
 “np.angle(z)”.'''
@@ -179,24 +179,24 @@ print(np.angle(z))'''
 '''A soma de números complexos é feita mediante o operador “+”.
 Para somarmos z1=2+4j e z2=5+6j, temos a figura 24'''
 
-""" z1=complex(2,4)
+z1=complex(2,4)
 z2=complex(5,6)
-print(z1+z2) """
+print(z1+z2) 
 
 '''A multiplicação de números complexos também é facilmente obtida
 utilizando o operador “*”.
 A multiplicação entre z1=2+4j e z2=5+6j resulta em z1*z2=-14+32j.
 '''
 
-""" z1=complex(2,4)
+z1=complex(2,4)
 z2=complex(5,6)
-print(z1*z2) """
+print(z1*z2) 
 
 '''Já a divisão entre z1=2+4j e z2=5+6j resulta em z1/z2=0,557+0,131j.'''
 
-""" z1=complex(2,4)
+z1=complex(2,4)
 z2=complex(5,6)
-print(z1/z2) """
+print(z1/z2) 
 
 #####################################################################
 
@@ -205,11 +205,11 @@ print(z1/z2) """
 '''Resolva o seguinte sistema linear:'''
 
 """ (2+3))a+(5j)6=3+7j
-(5-1)a+(3+3/16=6-7j """
+(5-1)a+(3+3/16=6-7j  """
 
-""" A=np.array([[complex(2,3), complex(0,5)],[complex(5,-1), complex(3,3)]])
+c=np.array([[complex(2,3), complex(0,5)],[complex(5,-1), complex(3,3)]])
 b=np.array([[complex(3,7)],[complex(6,-7)]])
-print(np.linalg.solve(A,b)) """
+print(np.linalg.solve(c,b)) 
 
 ############################################################
 
@@ -226,262 +226,6 @@ x2=np.cos(np.deg2rad(-150))
 y2=np.sin(np.deg2rad(-150))
 b=np.array([[100*complex(x1,y1)],[50*complex(x2,y2)]])
 print(np.linalg.solve(A,b))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

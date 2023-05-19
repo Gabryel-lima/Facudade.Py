@@ -6,7 +6,7 @@ from scipy import stats
 
 #EX1
 
-""" x=np.array([1,2,3,4]) #Valores de X
+x=np.array([1,2,3,4]) #Valores de X
 y=np.array([179.93,172.10,182.30,179.56]) #Valores de y
 a,b,correlacao,p,erro=stats.linregress(x,y) #Dados da reta de regressão
 print('Reta de regressão: y=%.2fx+%.2f'% (a,b)) #Apresentação da equação da reta
@@ -16,71 +16,66 @@ f=a*x+b #Reta de regressão para gerar os valores de f
 plt.plot(x,f,'r',label='Reta de regressão') #Gráfico da reta de regressão
 plt.ylim(170,190) #Definição dos limites do eixo y
 plt.legend() #Legenda
-plt.show() #Apresentação do gráfico """
-
+plt.show() #Apresentação do gráfico 
 #EX2
 
-""" x=np.array([80,90,100,110,120,130]) #Valores de x
+x=np.array([80,90,100,110,120,130]) #Valores de x
 y=np.array([1000,1050,1080,1110,1200,1250]) #Valores de y
 a,b,correlacao,p,erro=stats.linregress(x,y) #Dados da reta de regressão
 print('A equação é: y=%.2fx+%.2f'% (a,b)) #Apresentação da equação da reta
 print('coeficiente de correlação: r=%.2f'% correlacao) #Apresentação do coeficiente de correlação
 previsao=a*140+b #Previsão para o custo referente a 140 unidades
-print('Previsão para 140 unidades: R$ %.2f'% previsao) #Apresentação da previsão para 140 unidades """
-
+print('Previsão para 140 unidades: R$ %.2f'% previsao) #Apresentação da previsão para 140 unidades 
 #EX3
 
-""" x=np.array([1,2,3,4,5]) #Valores de x
+x=np.array([1,2,3,4,5]) #Valores de x
 y=np.array([180,192,206,220,254]) #Valores de y
 a,b,correlacao,p,erro=stats.linregress(x,y) #Dados da reta de regressão
 print('A equação é: y=%.2fx+%.2f'%(a,b)) #Apresentação da equação da reta
 previsao=a*6+b #Demanda prevista para o sábado
 print('Demanda prevista para sábado: R$ %.2f'% previsao)#Apresentação da demanda prevista
- """
+
 #Interpolação
 from scipy.interpolate import *
 
 #EX1
 
-""" x=[1,2,3,4,5] #Valores de x
+x=[1,2,3,4,5] #Valores de x
 y=[1,4,9,16,25] #Valores de y
 f=interp1d(x,y,kind='cubic') #Obtenção da função interpolação
 xi=np.linspace(1,5,100) #Valores de x para o gráfico da função interpoladora
 yi=f(xi) #Valores de y para a função interpoladora
 plt.plot(x,y,'o') #Gráfico dos dados originais
 plt.plot(xi,yi) #Gráfico da função interpoladora
-plt.show() #Apresentação do gráfico """
-
+plt.show() #Apresentação do gráfico 
 #EX2
 
-""" x=[1,2,3,4,5] #Valores de x
+x=[1,2,3,4,5] #Valores de x
 y=[1,4,9,16,25] #Valores de y
 f=lagrange(x,y) #Obtenção da função interpolação
-print(f) #Apresentação da função interpoladora """
-
+print(f) #Apresentação da função interpoladora 
 #EX3
 
-""" x=[8,11,13,15,18] #Valores de x
+x=[8,11,13,15,18] #Valores de x
 y=[20,25,32,30,27] #Valores de y
 f=lagrange(x,y) #Obtenção da função interpolação
 print(f) #Apresentação da função interpoladora
- """
-
+ 
 #EX4
 
-""" x=[8,11,13,15,18] #Valores de x
+x=[8,11,13,15,18] #Valores de x
 y=[20,25,32,30,27] #Valores de y
 f=interp1d(x,y,kind='cubic') #Obtenção da função interpolação
 xi=np.linspace (7,19,100) #Valores de x para o gráfico da função interpoladora
 yi=f(xi) #Valores de y para a função interpoladora
 plt.plot(x,y,'o') #Gráfico dos dados originais
 plt.plot(xi,yi) #Gráfico da função interpoladora
-plt.show() #Apresentação do gráfico """
+plt.show() #Apresentação do gráfico 
 
 #SÉRIES DE FOURIER
 from sympy import *
 
-""" #EX1 com dois termos
+#EX1 com dois termos
 
 x,f=symbols("x f")
 init_printing()
@@ -95,9 +90,9 @@ f=x**2
 y=-4* np.cos(x)+np.pi**2/3
 plt.plot(x,y,x,f)
 plt.legend(['Aproximação por Fourier','Função original'],loc=2)
-plt.show() """
+plt.show()
 
-""" #EX2 com três termos 
+#EX2 com três termos 
 
 x,f=symbols("x f")
 init_printing()
@@ -110,9 +105,8 @@ f=x**2
 y=-4* np.cos(x)+np.pi**2/3
 plt.plot(x,y,x,f)
 plt.legend(['Aproximação por Fourier','Função original'],loc=2)
-plt.show() """
-
-""" #EX2 com quatro termos 
+plt.show() 
+#EX2 com quatro termos 
 
 x,f=symbols("x f")
 init_printing()
@@ -125,19 +119,17 @@ f=x**2
 y=-4* np.cos(x)+np.pi**2/3
 plt.plot(x,y,x,f)
 plt.legend(['Aproximação por Fourier','Função original'],loc=2)
-plt.show() """
-
+plt.show() 
 #EX2  Utilização das séries de Fourier com 3 aproximações e a função original em um mesmo gráfico
 
-""" x=np.linspace(-np.pi, np.pi,100)
+x=np.linspace(-np.pi, np.pi,100)
 f=x**2
 y2=-4*np.cos(x)+np.pi**2/3
 y3=-4*np.cos(x)+np.cos(2*x)+np.pi**2/3
 y4=-4*np.cos(x)+np.cos(2*x)-4*np.cos(3*x)/9+np.pi**2/3
 plt.plot(x,y2,x,y3,x,y4,x,f)
 plt. legend(['2 termos ','3 termos','4 termos','Função original'], loc=2)
-plt. show() """
-
+plt. show() 
 #FORMULAÇÃO DE PROBLEMAS DE PROGRAMAÇÃO LINEAR
 
 #EX1
@@ -197,8 +189,7 @@ x1 ≥ 200
 x2 ≥ 100
 Veremos a seguir como é possível utilizarmos o Python para
 resolvermos o problema e sabermos quantas blusas e quantas camisetas
-precisam ser produzidas para que o lucro seja o maior possível. """
-
+precisam ser produzidas para que o lucro seja o maior possível.  """
 #RESOLUÇÃO DE PROBLEMAS DE PROGRAMAÇÃO LINEAR
 from pulp import *
 
@@ -222,8 +213,7 @@ x1 ≥ 200
 x2 ≥ 100
 Com base nessa formulação, podemos resolver esse problema
 utilizando a biblioteca “PuLP”. O primeiro passo é instalar o pacote “pulp”
-executando os seguintes comandos: """
-
+executando os seguintes comandos:  """
 prob = LpProblem('Exemplo1',LpMaximize)#Criação do problema de maximização
 #Variáveis:
 x1=LpVariable("Pares de Nadadeiras Curtas",0)
