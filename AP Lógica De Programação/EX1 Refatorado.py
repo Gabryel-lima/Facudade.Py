@@ -37,7 +37,6 @@ class Produto:
         
         return valor_com_frete
 
-    @property
     def valor_sem_frete(self):
         return self.valor * self.quantidade
     
