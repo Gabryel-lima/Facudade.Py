@@ -1,4 +1,4 @@
-Repositório de Estudo Python para Análise de Dados e Fundamentos da Linguagem
+# Repositório de Estudo Python para Análise de Dados e Fundamentos da Linguagem
 
 Bem-vindo ao Repositório de Estudo Python para Análise de Dados e Fundamentos da Linguagem! Este é um espaço dedicado ao aprendizado e aprofundamento na linguagem de programação Python, com foco especial em suas aplicações na análise de dados. Aqui, você encontrará recursos, tutoriais e projetos práticos para aprimorar suas habilidades em Python e explorar suas capacidades no campo da análise de dados.
 
@@ -9,7 +9,6 @@ Este repositório tem os seguintes objetivos principais:
 1. **Aprender Python** : Fornecer recursos para aprender os fundamentos da linguagem Python, desde o básico até conceitos mais avançados, incluindo estruturas de dados, controle de fluxo, funções, classes e módulos.
 2. **Análise de Dados com Python** : Abordar técnicas e bibliotecas populares para análise de dados, como pandas, numpy, matplotlib e seaborn. Você aprenderá como manipular e visualizar dados, realizar operações estatísticas e criar gráficos informativos.
 3. **Projetos Práticos** : Oferecer projetos práticos que permitem aplicar seus conhecimentos em Python e análise de dados em cenários do mundo real. Os projetos serão variados, desde análise de conjuntos de dados públicos até a criação de visualizações interativas.
-4. **Documentação e Tutoriais** : Fornecer documentação detalhada e tutoriais passo a passo para facilitar o aprendizado e a compreensão dos conceitos abordados.
 
 ## Estrutura do Repositório
 
@@ -23,13 +22,7 @@ Este repositório está organizado em pastas que representam os tópicos princip
 
 ## Como Começar
 
-Se você é novo no Python ou na análise de dados, sugerimos seguir esta ordem:
-
-1. Comece pela pasta **01-fundamentos-python** e explore os recursos disponíveis para aprender Python do zero.
-2. Depois de se sentir confortável com os fundamentos da linguagem, vá para a pasta **02-analise-de-dados** e comece a explorar as bibliotecas de análise de dados.
-3. Quando se sentir preparado, confira os projetos na pasta **03-projetos** para aplicar seus conhecimentos em cenários do mundo real.
-4. Utilize os tutoriais da pasta **04-tutoriais** para aprofundar seu conhecimento em tópicos específicos.
-5. Explore os recursos na pasta **05-recursos** para encontrar cursos, livros e outras fontes de aprendizado.
+Se você é novo no Python ou na análise de dados.
 
 ## Contribuições
 
