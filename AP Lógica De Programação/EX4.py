@@ -106,3 +106,5 @@ while True:
     except ValueError:
         print('\nPare de inserir um valor não inteiro!'.upper())
         continue 
+
+    

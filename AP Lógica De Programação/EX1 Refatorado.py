@@ -1,5 +1,5 @@
-class Produto:
 
+class Produto:
     def __init__(self):
         self.testa_valores_de_entrada()
     

@@ -17,12 +17,24 @@ class Sorvetes:
     }
 
     def __init__(self):
+        self.layout()
         self.valida_entrada_tipo()
         self.valida_entrada_tamanho()
         self.valida_tipo()
         self.valida_tamanho()
         self.verifica_valor()
         self.exibe_o_tipo_e_tamanho_e_valor()
+
+    def layout(self):
+        print('\nBem-vindo a loja!')
+        print( 35 * '_' + 'Tabela de preços'.upper() + 44 * '_')
+        print(95 * '-')
+        print( '|' + ' '  'Tipos'  + ' ' '|' + '      ' 'Descrição' + '       ' '|' + ' ' 'Tamanho P (500ml)' + ' ' '|' + ' ' 'Tamanho M (1000ml)' + ' ' '|' + ' ' 'Tamanho G (2000ml)' + ' ' '|')
+        print( '|' + '   '  '1' + '   ' '|' + ' ' 'Sabores Tradicionais' + ' ' '|' + '      ' 'R$ 6,00' + '      ' '|' + '      ' 'R$ 10,00' + '      ' '|' + '      ' 'R$ 18,00' + '      ' '|')
+        print( '|' + '   '  '2' + '   ' '|' + ' ' 'Sabores Especiais' + '    ' '|' + '      ' 'R$ 7,00' + '      ' '|' + '      ' 'R$ 12,00' + '      ' '|' + '      ' 'R$ 21,00' + '      ' '|')
+        print( '|' + '   '  '3' + '   ' '|' + ' ' 'Sabores Premium' + '      ' '|' + '      ' 'R$ 8,00' + '      ' '|' + '      ' 'R$ 14,00' + '      ' '|' + '      ' 'R$ 24,00' + '      ' '|')
+        print(95 * '-')
+        print('Escolha o tamanho de pote desejado ==> (P/M/G)\n')
 
     def valida_entrada_tipo(self):
         while True:
@@ -62,16 +74,10 @@ class Sorvetes:
         print('Tamanho {} selecionado!'.format(self.tamanho))
         print('Valor total R$ {} \n'.format(self.valor))
     
-if __name__ == '__main__':
-    
-    print('\nBem-vindo a loja!')
-    print( 35 * '_' + 'Tabela de preços'.upper() + 44 * '_')
-    print(95 * '-')
-    print( '|' + ' '  'Tipos'  + ' ' '|' + '      ' 'Descrição' + '       ' '|' + ' ' 'Tamanho P (500ml)' + ' ' '|' + ' ' 'Tamanho M (1000ml)' + ' ' '|' + ' ' 'Tamanho G (2000ml)' + ' ' '|')
-    print( '|' + '   '  '1' + '   ' '|' + ' ' 'Sabores Tradicionais' + ' ' '|' + '      ' 'R$ 6,00' + '      ' '|' + '      ' 'R$ 10,00' + '      ' '|' + '      ' 'R$ 18,00' + '      ' '|')
-    print( '|' + '   '  '2' + '   ' '|' + ' ' 'Sabores Especiais' + '    ' '|' + '      ' 'R$ 7,00' + '      ' '|' + '      ' 'R$ 12,00' + '      ' '|' + '      ' 'R$ 21,00' + '      ' '|')
-    print( '|' + '   '  '3' + '   ' '|' + ' ' 'Sabores Premium' + '      ' '|' + '      ' 'R$ 8,00' + '      ' '|' + '      ' 'R$ 14,00' + '      ' '|' + '      ' 'R$ 24,00' + '      ' '|')
-    print(95 * '-')
-    print('Escolha o tamanho de pote desejado ==> (P/M/G)\n')
+def main():
+    Sorvetes() 
 
-    sorvetes = Sorvetes() 
+if __name__ == '__main__':
+    main()
+
+    
