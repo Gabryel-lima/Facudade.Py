@@ -1,51 +1,63 @@
 
+# Variável global
+lista_livros = []
+
+def boas_vindas():
+    # Mensagem de boas-vindas
+    print("================================================")
+    print("Bem-vindo ao sistema de gerenciamento de livros!")
+    print("================================================")
 
 # Função para cadastrar um livro na lista de livros
-def cadastrar_livro(id):
+def cadastrar_livro(id:int):
     nome = input("Digite o nome do livro: ")
     autor = input("Digite o nome do autor: ")
     editora = input("Digite o nome da editora: ")
 
     livro = {"id": id, "nome": nome, "autor": autor, "editora": editora}
     lista_livros.append(livro)
-    print("Livro cadastrado com sucesso!")
+    print("\n>>> Livro cadastrado com sucesso!")
+    print(33*"-", "\n")
 
 # Função para consultar livros
 def consultar_livro():
     while True:
-        print("Opções de consulta:")
+        print("\n__Opções de consulta__")
         print("1. Consultar Todos")
         print("2. Consultar por Id")
         print("3. Consultar por Autor")
         print("4. Retornar ao menu")
-        opcao = input("Escolha uma opção: ")
+        opcao = input("\nEscolha uma opção: ")
+        print(18*"-", "\n")
 
         if opcao == '1':  # Consultar Todos
-            print("Todos os livros:")
-            for livro in lista_livros:
-                print(livro)
+            print("\n>>> Todos os livros:")
+            for i in lista_livros:
+                print("> ", i)
         elif opcao == '2':  # Consultar por Id
-            id_busca = int(input("Digite o Id do livro: "))
+            id_busca = int(input("\nDigite o Id do livro: "))
             for livro in lista_livros:
                 if livro["id"] == id_busca:
                     print("Livro encontrado:")
-                    print(livro)
+                    print("> ", livro)
                     break
             else:
-                print("Livro não encontrado.")
+                print("\nLivro não encontrado.")
+                print(15*"+")
         elif opcao == '3':  # Consultar por Autor
-            autor_busca = input("Digite o nome do autor: ")
+            autor_busca = input("\nDigite o nome do autor: ")
             livros_encontrados = [livro for livro in lista_livros if livro["autor"] == autor_busca]
             if livros_encontrados:
-                print("Livros do autor encontrados:")
+                print("\nLivros do autor encontrados:")
                 for livro in livros_encontrados:
-                    print(livro)
+                    print("> ", livro)
             else:
-                print("Nenhum livro encontrado para esse autor.")
+                print("\n>>> Nenhum livro encontrado para esse autor.")
         elif opcao == '4':  # Retornar ao menu
             break
         else:
-            print("Opção inválida!")
+            print("\nOpção inválida!")
+            print(15*"+")
 
 # Função para remover um livro da lista de livros
 def remover_livro():
@@ -53,40 +65,43 @@ def remover_livro():
     for livro in lista_livros:
         if livro["id"] == id_remover:
             lista_livros.remove(livro)
-            print("Livro removido com sucesso!")
+            print(29*"=")
+            print("\n>>> Livro removido com sucesso!")
             break
     else:
-        print("Id inválido. Livro não encontrado.")
-
-# Variáveis globais
-lista_livros = []
-id_global = 1
+        print("\nId inválido. Livro não encontrado.")
+        print(29*"+")
 
 def run():
+    # Inicialização de indice
+    id_global = 1
+
     # Mensagem de boas-vindas
-    print("Bem-vindo ao sistema de gerenciamento de livros!")
+    boas_vindas()
 
     # Menu principal
     while True:
-        print("\nOpções:")
+        print("\n__Opções__")
         print("1. Cadastrar Livro")
         print("2. Consultar Livro")
         print("3. Remover Livro")
         print("4. Encerrar Programa")
-        opcao_menu = input("Escolha uma opção: ")
+        opcao_menu = input("\n>>> Escolha uma opção: ")
+        print(25*"-", "\n")
 
-        if opcao_menu == '1':  # Cadastrar Livro
+        if opcao_menu == "1":  # Cadastrar Livro
             cadastrar_livro(id_global)
             id_global += 1
-        elif opcao_menu == '2':  # Consultar Livro
+        elif opcao_menu == "2":  # Consultar Livro
             consultar_livro()
-        elif opcao_menu == '3':  # Remover Livro
+        elif opcao_menu == "3":  # Remover Livro
             remover_livro()
-        elif opcao_menu == '4':  # Encerrar Programa
-            print("Encerrando o programa...")
+        elif opcao_menu == "4":  # Encerrar Programa
+            print("\nEncerrando o programa...\n")
             break
         else:
-            print("Opção inválida!")
+            print("\nOpção inválida!")
+            print(15*"+")
 
 def main():
     run()

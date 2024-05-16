@@ -1,9 +1,23 @@
 
+def boas_vindas():
+    # Mensagem de boas-vindas
+    print("==============================================")
+    print("Bem-vindo ao sistema de cobrança da copiadora!")
+    print("==============================================")
+
+def tabela():
+    # Tabela
+    print("\n__Digite o serviço desejado__")
+    print("|(DIG - para Digitalização)")
+    print("|(ICO - para Impressão Colorida)")
+    print("|(IPB - para Impressão Preto e Branco)")
+    print("|(FOT - para Fotocópia)")
+    print("--")
 
 # Função para escolher o serviço desejado
 def escolha_servico():
     while True:
-        servico = input("Digite o serviço desejado (DIG para Digitalização, ICO para Impressão Colorida, IPB para Impressão Preto e Branco, FOT para Fotocópia): ").lower()
+        servico = input("\n>>> ").lower()
         if servico in ['dig', 'ico', 'ipb', 'fot']:
             return servico
         else:
@@ -13,7 +27,7 @@ def escolha_servico():
 def num_paginas():
     while True:
         try:
-            num_paginas = int(input("Digite o número de páginas: "))
+            num_paginas = int(input(">>> Digite o número de páginas: "))
             if num_paginas < 20:
                 return num_paginas
             elif 20 <= num_paginas < 200:
@@ -23,23 +37,26 @@ def num_paginas():
             elif 2000 <= num_paginas < 20000:
                 return int(num_paginas * 0.75) # 25% de desconto
             else:
-                print("Número de páginas excede o máximo permitido (20000).")
+                print("\nNúmero de páginas excede o máximo permitido (20000).")
+                print(36*"§")
         except ValueError:
-            print("Por favor, digite um número válido de páginas.")
+            print("\nPor favor, digite um número válido de páginas.")
 
 # Função para escolher o serviço adicional
 def servico_extra():
     while True:
-        servico_adicional = input("Deseja algum serviço adicional? (Digite 1 para encadernação simples, 2 para encadernação de capa dura, 0 para nenhum): ")
+        servico_adicional = input(">>> Deseja algum serviço adicional? (Digite 1 para encadernação simples, 2 para encadernação de capa dura, 0 para nenhum): ")
         if servico_adicional in ['0', '1', '2']:
             return int(servico_adicional)
         else:
-            print("Opção inválida! Por favor, escolha entre 0, 1 ou 2.")
+            print("\nOpção inválida! Por favor, escolha entre 0, 1 ou 2.")
+            print(36*"§")
 
 def run():
     # Mensagem de boas-vindas
-    print("Bem-vindo ao sistema de cobrança da copiadora!")
-
+    boas_vindas()
+    # Tabela 
+    tabela()
     try:
         # Obter o serviço desejado
         servico = escolha_servico()
@@ -67,7 +84,8 @@ def run():
         elif servico_adicional == 2:
             valor_total += 40
 
-        print(f"Valor total a pagar: R${valor_total:.2f}")
+        print(29*"=")
+        print(f"\nValor total a pagar: R${valor_total:.2f}\n")
 
     except Exception as e:
         print("Ocorreu um erro:", e)

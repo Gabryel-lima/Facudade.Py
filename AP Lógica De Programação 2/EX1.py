@@ -1,23 +1,6 @@
 
-
 def main():
-    """
-    Função principal do programa de vendas com desconto.
-
-    Essa função implementa as funcionalidades do enunciado, incluindo:
-    - Mensagem de boas-vindas com o nome do programador
-    - Input do valor unitário e da quantidade do produto
-    - Cálculo do desconto conforme a tabela de descontos
-    - Cálculo do valor total sem desconto e com desconto
-    - Utilização das estruturas de controle if, elif e else
-    - Apresentação de mensagens na saída do console
-
-    Argumentos:
-        Nenhum.
-
-    Retorno:
-        Nenhum.
-    """
+    """Função principal do programa de vendas com desconto."""
 
     # Mensagem de boas-vindas
     print("\n================================")
