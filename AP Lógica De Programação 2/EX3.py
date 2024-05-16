@@ -45,7 +45,10 @@ def num_paginas():
 # Função para escolher o serviço adicional
 def servico_extra():
     while True:
-        servico_adicional = input(">>> Deseja algum serviço adicional? (Digite 1 para encadernação simples, 2 para encadernação de capa dura, 0 para nenhum): ")
+        print("\n(Digite 1 - para encadernação simples)")
+        print("(Digite 2 - para encadernação de capa dura)")
+        print("(Digite 0 - para nenhum)")
+        servico_adicional = input("\n>>> Deseja algum serviço adicional: ")
         if servico_adicional in ['0', '1', '2']:
             return int(servico_adicional)
         else:
