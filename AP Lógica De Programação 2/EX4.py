@@ -1,4 +1,3 @@
-
 # Variável global
 lista_livros = []
 
@@ -9,7 +8,8 @@ def boas_vindas():
     print("================================================")
 
 # Função para cadastrar um livro na lista de livros
-def cadastrar_livro(id:int):
+def cadastrar_livro(id):
+    id_livro = id
     nome = input("Digite o nome do livro: ")
     autor = input("Digite o nome do autor: ")
     editora = input("Digite o nome da editora: ")
@@ -18,6 +18,7 @@ def cadastrar_livro(id:int):
     lista_livros.append(livro)
     print("\n>>> Livro cadastrado com sucesso!")
     print(33*"-", "\n")
+    id_livro += 1
 
 # Função para consultar livros
 def consultar_livro():
@@ -32,8 +33,8 @@ def consultar_livro():
 
         if opcao == '1':  # Consultar Todos
             print("\n>>> Todos os livros:")
-            for i in lista_livros:
-                print("> ", i)
+            for livro in lista_livros:
+                print("> ", livro)
         elif opcao == '2':  # Consultar por Id
             id_busca = int(input("\nDigite o Id do livro: "))
             for livro in lista_livros:
@@ -46,11 +47,10 @@ def consultar_livro():
                 print(15*"+")
         elif opcao == '3':  # Consultar por Autor
             autor_busca = input("\nDigite o nome do autor: ")
-            livros_encontrados = [livro for livro in lista_livros if livro["autor"] == autor_busca]
-            if livros_encontrados:
-                print("\nLivros do autor encontrados:")
-                for livro in livros_encontrados:
+            for livro in lista_livros:
+                if livro["autor"] == autor_busca:
                     print("> ", livro)
+                    break
             else:
                 print("\n>>> Nenhum livro encontrado para esse autor.")
         elif opcao == '4':  # Retornar ao menu
@@ -65,17 +65,12 @@ def remover_livro():
     for livro in lista_livros:
         if livro["id"] == id_remover:
             lista_livros.remove(livro)
-            print(29*"=")
             print("\n>>> Livro removido com sucesso!")
             break
     else:
-        print("\nId inválido. Livro não encontrado.")
-        print(29*"+")
+        print("Id inválido. Livro não encontrado.")
 
 def run():
-    # Inicialização de indice
-    id_global = 1
-
     # Mensagem de boas-vindas
     boas_vindas()
 
@@ -90,8 +85,7 @@ def run():
         print(25*"-", "\n")
 
         if opcao_menu == "1":  # Cadastrar Livro
-            cadastrar_livro(id_global)
-            id_global += 1
+            cadastrar_livro(id=1)
         elif opcao_menu == "2":  # Consultar Livro
             consultar_livro()
         elif opcao_menu == "3":  # Remover Livro
@@ -108,5 +102,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
